@@ -1,28 +1,30 @@
 #include <stdio.h>
-/**
- * main - main block
- * Description: Use `putchar` to print lowercase and then uppercase alphabet.
- * Return: 0
- */
-int main(void)
-{
-	char c = 'a';
+#include <stdlib.h>
+#include <time.h>
 
-	while (c <= 'z')
-	{
-		putchar(c);
-		c++;
-	}
+int main() {
+    int n;
 
-	c = 'A';
+    // Seed the random number generator
+    srand(time(0));
 
-	while (c <= 'Z')
-	{
-		putchar(c);
-		c++;
-	}
+    // Generate a random number between -100 and 100
+    n = rand() % 201 - 100;
 
-	putchar('\n');
+    // Print the generated number
+    printf("The number %d ", n);
 
-	return (0);
+    // Check if the number is positive, negative, or zero
+    if (n > 0) {
+        printf("is positive");
+    } else if (n == 0) {
+        printf("is zero");
+    } else {
+        printf("is negative");
+    }
+
+    printf("\n");
+
+    return 0;
 }
+
